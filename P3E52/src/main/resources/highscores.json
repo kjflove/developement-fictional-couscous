@@ -1,0 +1,16 @@
+{
+  "highscores": [
+    {
+      "name": "kasd",
+      "score": 2142
+    },{
+      "name": "faskml",
+      "score": 929
+    }
+  ],
+  "me": {
+    "name": "",
+    "score": 0,
+    "alreadyPlayed": false
+  }
+}
