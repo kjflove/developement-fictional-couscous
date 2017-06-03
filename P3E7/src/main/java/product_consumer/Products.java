@@ -15,14 +15,14 @@ public class Products {
 
     private static List<Integer> container = new LinkedList<>();
 
-    public synchronized static int removeProduct() throws IllegalAccessException{
+    public static int removeProduct() throws IllegalAccessException{
         if(container.size() > 0)
             return container.remove(container.size()-1);
         else
             throw new IllegalAccessException();
     }
 
-    public synchronized static void insertProduct(int toAdd){
+    public static void insertProduct(int toAdd){
         container.add(toAdd);
     }
 }

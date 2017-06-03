@@ -51,6 +51,7 @@ public class Producer extends Thread {
 
         try {
             this.dataOutputStream.close();
+            this.dataInputStream.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
