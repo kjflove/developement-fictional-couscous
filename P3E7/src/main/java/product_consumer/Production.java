@@ -23,12 +23,12 @@ public class Production {
         PipedInputStream inC = new PipedInputStream(outP);
         PipedInputStream inP = new PipedInputStream(outC);
 
-
-
         Producer p = new Producer(50, outP, inP);
         Consumer c = new Consumer(inC, outC);
+
         threads.add(p);
         threads.add(c);
+
         p.start();
         c.start();
 
