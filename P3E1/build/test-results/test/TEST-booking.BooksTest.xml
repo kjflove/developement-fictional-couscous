@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="booking.BooksTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2017-04-19T10:56:32" hostname="Marvins-MacBook-Pro.local" time="0.018">
+  <properties/>
+  <testcase name="addBook" classname="booking.BooksTest" time="0.006"/>
+  <testcase name="getByID" classname="booking.BooksTest" time="0.001"/>
+  <testcase name="correctBookData" classname="booking.BooksTest" time="0.001"/>
+  <testcase name="retriveBookInfo" classname="booking.BooksTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
