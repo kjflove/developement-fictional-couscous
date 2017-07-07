@@ -1,13 +1,14 @@
 package server_currency;
 
-import com.sun.security.ntlm.Server;
 import communication.CurrencyData;
 import javafx.beans.property.Property;
 
-import java.io.*;
+import java.io.EOFException;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.PrintWriter;
 import java.net.Socket;
-import java.util.LinkedList;
-import java.util.List;
+import java.text.DecimalFormat;
 
 /**
  * Class description ...
@@ -49,7 +50,8 @@ public class ExchangeCalculator extends Thread {
             this.request = (CurrencyData) networkRequest.readObject();
             // 2. get the information about the exchange value and return
             double exchanged_money = this.request.getFromCurrency().exchange(this.request.getMoneyToExchange());
-            out.println("Your exchange has been calculated: " +  exchanged_money + " " + this.request.getToCurrency().getName());
+            DecimalFormat df = new DecimalFormat("###.##");
+            out.println("Your exchange has been calculated: " + df.format(exchanged_money) + " " + this.request.getToCurrency().getName());
         } catch (EOFException e) {
             System.out.println("Client closed connection unexpectedly!!");
         } catch (IOException | ClassNotFoundException e) {

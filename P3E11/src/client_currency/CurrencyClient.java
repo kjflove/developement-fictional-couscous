@@ -3,9 +3,12 @@ package client_currency;
 import communication.CurrencyData;
 import communication.SupportedCurrency;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.ObjectOutputStream;
+import java.net.ConnectException;
 import java.net.Socket;
-import java.net.UnknownHostException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -42,6 +45,10 @@ public class CurrencyClient {
                 } catch (InputMismatchException | IllegalArgumentException e){
                     System.out.println("Some inputs were wrong. Make sure to use `,` in decimals.");
                 }
+            } catch (ConnectException e) {
+                System.out.println("Please start the server, before you start the client! No connection established.");
+                System.out.println("Please also check your firewall settings.");
+                System.exit(1);
             } catch (IOException e) {
                 e.printStackTrace();
             }
